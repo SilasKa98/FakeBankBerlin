@@ -153,6 +153,10 @@ h1{
 
 
 .detailText{
+    font-size: 14pt;
+}
+
+.InfoText{
     font-size: 11pt;
 }
 
@@ -216,7 +220,7 @@ h1{
         <div class="columnInfo">
             <div class="cardInfo">
                 <img src="ownIcons/careRed.png" id="infoIcon">
-                <p class="detailText"><b>Achtung</b> - Bitte beachten Sie, dass der Geldeingang beim Begünstigten bis zu 24h in Anspruch nehmen kann!</p>
+                <p class="InfoText"><b>Achtung</b> - Bitte beachten Sie, dass der Geldeingang beim Begünstigten bis zu 24h in Anspruch nehmen kann!</p>
         </div>
     </div>
 <br><br>
