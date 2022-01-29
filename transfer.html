@@ -69,25 +69,27 @@
 	<p>Bitte füllen Sie alle Felder lückenlos und wahrheitsgemäß aus.</p>
     <hr>
 
-    <p>Begünstigter</p>
-    <input type="transfer" placeholder="Name, Vorname/Firma" required>
+	<form action="backend.php" method="POST">
+		<p>Begünstigter</p>
+		<input type="transfer" name="name" placeholder="Name, Vorname/Firma" required>
 
-    <p>IBAN des Begünstigten</p>
-    <input type="transfer" placeholder="IBAN" required>
+		<p>IBAN des Begünstigten</p>
+		<input type="transfer" name="iban" placeholder="IBAN" required>
 
-    <p>Betrag in €</p>
-    <input type="transfer" placeholder="Euro,Cent" required>
+		<p>Betrag in €</p>
+		<input type="transfer" name="betrag" placeholder="Euro,Cent" required>
 
-    <p>Verwendungszweck</p>
-    <input type="transfer" placeholder="Verwendungszweck" required>
+		<p>Verwendungszweck</p>
+		<input type="transfer" name="zweck" placeholder="Verwendungszweck" required>
 
-    <!--a>Aktuell gültiger Verifizierungscode des </a>
-	<a href="#">PIN-Generators</a>
-    <input type="transfer" required-->
-    <hr>
+    	<!--a>Aktuell gültiger Verifizierungscode des </a>
+		<a href="#">PIN-Generators</a>
+		<input type="transfer" required-->
+		<hr>
 
-    <button type="submit" class="registerbtn">Abbrechen</button>
-    <button type="submit" class="registerbtn">Überweisen</button>
+		<button class="registerbtn">Abbrechen</button>
+		<input type="submit" class="registerbtn" value="Überweisen">
+	</form>
 </div>
 
 <div class="spacer"></div>
