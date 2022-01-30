@@ -1,3 +1,16 @@
+<?php
+include 'db_connector.php';
+
+$sql = "select name from konten";
+$stmt = mysqli_stmt_init($connection);
+if(!mysqli_stmt_prepare($stmt, $sql)){
+    echo "SQL Statement failed";
+}else{
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+}
+?>
+
 <!doctype html>
 <html lang="de">
   <head>
@@ -66,6 +79,15 @@
 			<p>Bitte füllen Sie alle Felder lückenlos und wahrheitsgemäß aus.</p>
     	<hr>
 			<form action="backend.php" method="POST">
+        <p>Konto</p>
+        <select type="transfer" name="konto" id="konto">
+          <?php
+            while ($row = $result->fetch_assoc()) {
+              $name = $row["name"];
+              echo "<option value=\"".$row["name"]."\">".$row["name"]."</option>";
+            }
+          ?>
+        </select>
 				<p>Begünstigter</p>
 				<input type="transfer" name="name" placeholder="Name, Vorname/Firma" required>
 				<p>IBAN des Begünstigten</p>
@@ -101,47 +123,5 @@
 				<p>            &copy; Copyright 2020 GGNOREE LLP, LLC, UDP.</p>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="spacer"></div>
-<div class="container">
-	<h2>Überweisungsformular</h2> 
-
-	<p>Bitte füllen Sie alle Felder lückenlos und wahrheitsgemäß aus.</p>
-    <hr>
-
-	<form action="backend.php" method="POST">
-		<p>Begünstigter</p>
-		<input type="transfer" name="name" placeholder="Name, Vorname/Firma" required>
-
-		<p>IBAN des Begünstigten</p>
-		<input type="transfer" name="iban" placeholder="IBAN" required>
-
-		<p>Betrag in €</p>
-		<input type="transfer" name="betrag" placeholder="Euro,Cent" required>
-
-		<p>Verwendungszweck</p>
-		<input type="transfer" name="zweck" placeholder="Verwendungszweck" required>
-
-    	<!--a>Aktuell gültiger Verifizierungscode des </a>
-		<a href="#">PIN-Generators</a>
-		<input type="transfer" required-->
-		<hr>
-		<input type="button" class="registerbtn" value="Abbrechen">
-		<input type="submit" class="registerbtn" value="Überweisen">
-	</form>
-</div>
-
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-
-<div class="content footer">
-	<div class="container">
-		<p>Member FDIC: No. Rates and investment products are not insured.</p>
-		<p>The bank information provided on this website is only valid for those living in states that end in G and no others. Any attempt to use this website without authorized access is prohibited by the 11th circuit court of the high magistrates. No offers may be made or accepted from any resident outside of these states due to various state regulations and registration requirements regarding investment products and services.</p>
-
-		<p>            &copy; Copyright 2020 GGNOREE LLP, LLC, UDP.</p>
-	</div>
   </body>
 </html>

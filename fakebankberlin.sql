@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Erstellungszeit: 30. Jan 2022 um 16:50
+-- Erstellungszeit: 30. Jan 2022 um 20:33
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.2.32
 
@@ -39,7 +39,7 @@ CREATE TABLE `konten` (
 --
 
 INSERT INTO `konten` (`id`, `name`, `nummer`, `kontostand`) VALUES
-(1, 'Bausparvertrag', '2325433345', '1234.00');
+(1, 'Bausparvertrag', '2325433345', '673.00');
 
 -- --------------------------------------------------------
 
@@ -51,18 +51,22 @@ CREATE TABLE `ueberweisungen` (
   `ID` int(255) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
   `iban` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
-  `betrag` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
+  `betrag` decimal(12,2) NOT NULL,
   `zweck` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
   `datum` datetime NOT NULL,
-  `typ` varchar(30) COLLATE utf8mb4_german2_ci NOT NULL
+  `typ` varchar(30) COLLATE utf8mb4_german2_ci NOT NULL,
+  `konto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
 --
 -- Daten für Tabelle `ueberweisungen`
 --
 
-INSERT INTO `ueberweisungen` (`ID`, `name`, `iban`, `betrag`, `zweck`, `datum`, `typ`) VALUES
-(12, 'Patrick', 'DE18 7420 1874 2018 7420 18', '187,00', 'Lutschen', '2022-01-30 16:25:03', 'Überweisung');
+INSERT INTO `ueberweisungen` (`ID`, `name`, `iban`, `betrag`, `zweck`, `datum`, `typ`, `konto`) VALUES
+(17, 'Patrick', 'DE82642500400009079946', '187.00', 'Lutschen', '2022-01-30 20:28:32', 'Überweisung', 1),
+(18, 'Patrick', 'DE82642500400009079946', '187.00', 'Lutschen', '2022-01-30 20:29:13', 'Überweisung', 1),
+(19, 'Patrick', 'DE82642500400009079946', '187.00', 'Lutschen', '2022-01-30 20:29:35', 'Überweisung', 1),
+(20, 'Patrick', 'DE82642500400009079946', '187.00', 'Lutschen', '2022-01-30 20:29:57', 'Überweisung', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -94,7 +98,7 @@ ALTER TABLE `konten`
 -- AUTO_INCREMENT für Tabelle `ueberweisungen`
 --
 ALTER TABLE `ueberweisungen`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

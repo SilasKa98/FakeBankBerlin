@@ -64,10 +64,10 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
 					<div class="col-md-12">
   					<nav>
 							<ul class="nav mx-auto">
-								<li class="nav-item"><a class="nav-link" href="/account.php">Ihr Konto</a></li>
-								<li class="nav-item"><a class="nav-link" href="/transfer.html">Bezahlungen und Überweisungen</a></li>
+								<li class="nav-item"><a class="nav-link" href="account.php">Ihr Konto</a></li>
+								<li class="nav-item"><a class="nav-link" href="transfer.php">Bezahlungen und Überweisungen</a></li>
 								<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
-								<li class="nav-item"><a class="nav-link"  id="log" href="/index.html">Logout</a></li>
+								<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
 							</ul>
 						</nav>
 					</div>

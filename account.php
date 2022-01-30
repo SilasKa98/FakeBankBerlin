@@ -54,7 +54,7 @@ include 'db_connector.php';
             <nav>
     					<ul class="nav mx-auto">
     						<li class="nav-item"><a class="nav-link" href="account.php">Ihr Konto</a></li>
-    						<li class="nav-item"><a class="nav-link" href="transfer.html">Bezahlungen und Überweisungen</a></li>
+    						<li class="nav-item"><a class="nav-link" href="transfer.php">Bezahlungen und Überweisungen</a></li>
     						<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
     						<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
     					</ul>
@@ -117,7 +117,7 @@ include 'db_connector.php';
             <div class="row">
               <ul class="vertical">
                 <li><span class="oi" data-glyph="book"></span><a href="/account/details/">Alle Transaktionen</a></li>
-                <li><span class="oi" data-glyph="calculator"></span><a href="transfer.html">Überweisung erstellen</a></li>
+                <li><span class="oi" data-glyph="calculator"></span><a href="transfer.php">Überweisung erstellen</a></li>
                 <li><span class="oi" data-glyph="briefcase"></span><a href="#">Support kontaktieren</a></li>
                 <li><span class="oi" data-glyph="info"></span><a href="#">Benachrichtigungen aktivieren</a></li>
                 <li><span class="oi" data-glyph="document"></span><a href="account/paperless">Papierloses arbeiten</a></li>
@@ -147,7 +147,7 @@ include 'db_connector.php';
                   echo "<div class=\"col-md-4\">";
                   echo "<ul class=\"vertical\">";
                   echo "<li><a href=\"/account/details/?n=".$row["id"]."\">Zur Transaktion</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
-                  echo "<li><a href=\"transfer.html\">Überweisung tätigen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
+                  echo "<li><a href=\"transfer.php\">Überweisung tätigen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
                   echo "<li><a class=\"moreactions\" href=\"#\">Weitere Optionen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
                   echo "</ul></div></div></div>";
                 }
@@ -177,7 +177,7 @@ include 'db_connector.php';
                     echo "<td><a href=\"/account/details/?n=".$row["id"]."\">".$row["name"]."</a></td>";
                     echo "<td>".$row["nummer"]."</td>";
                     echo "<td>".$row["kontostand"]."</td>";
-                    echo "<td><a href=\"transfer.html\"".$row["kontostand"]." €</a></td>";
+                    echo "<td><a href=\"transfer.php\"".$row["kontostand"]." €</a></td>";
                     echo "</tr>";
                   }
                 ?>
@@ -254,8 +254,7 @@ include 'db_connector.php';
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/script.js"></script>
-
+    
     </script>
 
   </body>
