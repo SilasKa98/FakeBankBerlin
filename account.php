@@ -83,9 +83,9 @@ include 'db_connector.php';
             <div class="card-body">
               <h5 class="full">Schnellzugriffe</h5>
               <ul>
-                <li><a href="#">Karte verloren oder gestohlen</a></li>
-                <li><a href="#">Neuen Benutzer anlegen</a></li>
-                <li><a href="#">Support kontaktieren</a></li>
+                <li><a href="wip.html">Karte verloren oder gestohlen</a></li>
+                <li><a href="wip.html">Neuen Benutzer anlegen</a></li>
+                <li><a href="wip.html">Support kontaktieren</a></li>
               </ul>
             </div>
           </div>     
@@ -116,12 +116,12 @@ include 'db_connector.php';
           <div id="filler">
             <div class="row">
               <ul class="vertical">
-                <li><span class="oi" data-glyph="book"></span><a href="/account/details/">Alle Transaktionen</a></li>
+                <li><span class="oi" data-glyph="book"></span><a href="alleTransaktionen.php">Alle Transaktionen</a></li>
                 <li><span class="oi" data-glyph="calculator"></span><a href="transfer.php">Überweisung erstellen</a></li>
-                <li><span class="oi" data-glyph="briefcase"></span><a href="#">Support kontaktieren</a></li>
-                <li><span class="oi" data-glyph="info"></span><a href="#">Benachrichtigungen aktivieren</a></li>
-                <li><span class="oi" data-glyph="document"></span><a href="account/paperless">Papierloses arbeiten</a></li>
-                <li><span class="oi" data-glyph="grid-three-up"></span><a href="account/profile">Benutzerkonto bearbeiten</a></li>
+                <li><span class="oi" data-glyph="briefcase"></span><a href="wip.html">Support kontaktieren</a></li>
+                <li><span class="oi" data-glyph="info"></span><a href="wip.html">Benachrichtigungen aktivieren</a></li>
+                <li><span class="oi" data-glyph="document"></span><a href="wip.html">Papierloses arbeiten</a></li>
+                <li><span class="oi" data-glyph="grid-three-up"></span><a href="wip.html">Benutzerkonto bearbeiten</a></li>
               </ul>
             </div>
           </div>
@@ -146,9 +146,9 @@ include 'db_connector.php';
                   echo "</div>";
                   echo "<div class=\"col-md-4\">";
                   echo "<ul class=\"vertical\">";
-                  echo "<li><a href=\"/account/details/?n=".$row["id"]."\">Zur Transaktion</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
+                  echo "<li><a href=\"wip.html\">Zur Transaktion</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
                   echo "<li><a href=\"transfer.php\">Überweisung tätigen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
-                  echo "<li><a class=\"moreactions\" href=\"#\">Weitere Optionen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
+                  echo "<li><a class=\"moreactions\" href=\"wip.html\">Weitere Optionen</a><span class=\"oi\" data-glyph=\"caret-right\"></span></li>";
                   echo "</ul></div></div></div>";
                 }
               ?>  
@@ -176,8 +176,8 @@ include 'db_connector.php';
                     echo "<tr>";
                     echo "<td><a href=\"/account/details/?n=".$row["id"]."\">".$row["name"]."</a></td>";
                     echo "<td>".$row["nummer"]."</td>";
-                    echo "<td>".$row["kontostand"]."</td>";
-                    echo "<td><a href=\"transfer.php\"".$row["kontostand"]." €</a></td>";
+                    echo "<td>".$row["kontostand"]." €</td>";
+                    echo "<td><a href=\"transfer.php\"".$row["id"]."</a> Transaktion</td>";
                     echo "</tr>";
                   }
                 ?>
