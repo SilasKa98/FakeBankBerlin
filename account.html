@@ -7,435 +7,376 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
     <link rel="stylesheet" href="themes/basic/template.css">
-        <title>Benutzerkonto</title>
-
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    <title>Benutzerkonto</title>
+	  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	  <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
-
   	<div class="preheader">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-
-				<nav>
-					<ul> 
-                        <li style="color:grey">Produkte</li>
-                        <li style="color:grey">Dienstleistungen</li>
-                        <li style="color:grey">Hilfe</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-</div>
-<header>    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2 style="margin-top:8px;">
-                <span id="logo" class="oi" data-glyph="glyph"></span>Bundesbank Berlin</h2>
-            </div>
-            <div class="col-md-4">
-                <img src="\img\icons\open-iconic-master\png\BundeBankBerlinLogo.png" width="50" align="right">
-            </div>
-        </div>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<nav>
+    					<ul> 
+                <li style="color:grey">Produkte</li>
+                <li style="color:grey">Dienstleistungen</li>
+                <li style="color:grey">Hilfe</li>
+    					</ul>
+    				</nav>
+    			</div>
+    		</div>
+    	</div>
     </div>
-</header>
-<div class="menu">
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-                <nav>
-					<ul class="nav mx-auto">
-						<li class="nav-item"><a class="nav-link" href="account.html">Ihr Konto</a></li>
-						<li class="nav-item"><a class="nav-link" href="transfer.html">Bezahlungen und Überweisungen</a></li>
-						<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
-						<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-</div>
-
+    <header>    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h2 style="margin-top:8px;">
+            <span id="logo" class="oi" data-glyph="glyph"></span>Bundesbank Berlin</h2>
+          </div>
+          <div class="col-md-4">
+            <img src="\img\icons\open-iconic-master\png\BundeBankBerlinLogo.png" width="50" align="right">
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="menu">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+            <nav>
+    					<ul class="nav mx-auto">
+    						<li class="nav-item"><a class="nav-link" href="account.html">Ihr Konto</a></li>
+    						<li class="nav-item"><a class="nav-link" href="transfer.html">Bezahlungen und Überweisungen</a></li>
+    						<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
+    						<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
+    					</ul>
+    				</nav>
+    			</div>
+    		</div>
+    	</div>
+    </div>
     <div class="container" id="stuff">
-
     	<div id="loading">
     		<h3>Please Just Wait A Moment...</h3>
     	</div>
-        <br />
+      <br>
+      <div id="loginmessage">Willkommen zurück!</div>
+      <div id="mainrow" class="row">
+        <div class="col-md-4">
+          <div id="notifications">
+            <h4>Willkommen zurück!</h4>
+            <p>
+              <span class="oi" data-glyph="envelope-open" title="icon name" aria-hidden="true"></span> 
+              Sie haben 5 ungelesene Meldungen
+            </p>
+            <button id="inb" class="btn btn-large">Infobox</button>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="full">Schnellzugriffe</h5>
+              <ul>
+                <li><a href="#">Karte verloren oder gestohlen</a></li>
+                <li><a href="#">Neuen Benutzer anlegen</a></li>
+                <li><a href="#">Support kontaktieren</a></li>
+              </ul>
+            </div>
+          </div>     
+          <!--
+          <div class="card">
+              <div class="card-body">
 
-        <div id="loginmessage">
-            Willkommen zurück!</div>
-
-        <div id="mainrow" class="row">
-
-            <div class="col-md-4">
-
-                        <div id="notifications">
-
-                            <h4>Willkommen zurück!</h4>
-                            
-                            <p><span class="oi" data-glyph="envelope-open" title="icon name" aria-hidden="true"></span> Sie haben 5 ungelesene Meldungen</p>
-                            <button id="inb" class="btn btn-large">Infobox</button>
-
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <h5 class="full">Schnellzugriffe</h5>
-                                <ul>
-                                    <li><a href="#">Karte verloren oder gestohlen</a></li>
-                                    <li><a href="#">Neuen Benutzer anlegen</a></li>
-                                    <li><a href="#">Support kontaktieren</a></li>
-                                </ul>
-                            </div>
-                        </div>        
-
-                        <!--
-                        <div class="card">
-                            <div class="card-body">
-
-                                <h4 class="card-title">Monthly Spending Report</h4>
-                                <br />
-                                <p>Get a breakdown of your monthly spending habits.</p>
-                                <a class="btn btn-large" href="#">View Now</a>
-                            </div>
-                        </div>
-                        -->
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Besser leben</h4>
-                                <img src="https://source.unsplash.com/collection/3657445" />
-                                <br /><br />
-                                <p>Wir haben alles was sie brauchen.</p>
-                                <a href="#" onclick="triggerInactive()">Learn More</a>
-                            </div>
-                        </div>
-                    
-
-                         <button id="contact" class="btn-warning">Support kontaktieren</button>
-
-                   
-
-                 </div>
-
-            <div class="col-md-8">
-
-                
-
-                <div id="filler">
-                    <div class="row">
-                        <ul class="vertical">
-                            <li><span class="oi" data-glyph="book"></span><a href="/account/details/">Alle Transaktionen</a></li>
-                            <li><span class="oi" data-glyph="calculator"></span><a href="transfer.html">Überweisung erstellen</a></li>
-                            <li><span class="oi" data-glyph="briefcase"></span><a href="#">Support kontaktieren</a></li>
-                            <li><span class="oi" data-glyph="info"></span><a href="#">Benachrichtigungen aktivieren</a></li>
-                            <li><span class="oi" data-glyph="document"></span><a href="account/paperless">Papierloses arbeiten</a></li>
-                            <li><span class="oi" data-glyph="grid-three-up"></span><a href="account/profile">Benutzerkonto bearbeiten</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-
+                  <h4 class="card-title">Monthly Spending Report</h4>
+                  <br />
+                  <p>Get a breakdown of your monthly spending habits.</p>
+                  <a class="btn btn-large" href="#">View Now</a>
+              </div>
+          </div>
+          -->
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Besser leben</h4>
+              <img src="https://source.unsplash.com/collection/3657445">
+              <br>
+              <br>
+              <p>Wir haben alles was sie brauchen.</p>
+              <a href="#" onclick="triggerInactive()">Learn More</a>
+            </div>
+          </div>
+          <button id="contact" class="btn-warning">Support kontaktieren</button>
+        </div>
+        <div class="col-md-8">
+          <div id="filler">
+            <div class="row">
+              <ul class="vertical">
+                <li><span class="oi" data-glyph="book"></span><a href="/account/details/">Alle Transaktionen</a></li>
+                <li><span class="oi" data-glyph="calculator"></span><a href="transfer.html">Überweisung erstellen</a></li>
+                <li><span class="oi" data-glyph="briefcase"></span><a href="#">Support kontaktieren</a></li>
+                <li><span class="oi" data-glyph="info"></span><a href="#">Benachrichtigungen aktivieren</a></li>
+                <li><span class="oi" data-glyph="document"></span><a href="account/paperless">Papierloses arbeiten</a></li>
+                <li><span class="oi" data-glyph="grid-three-up"></span><a href="account/profile">Benutzerkonto bearbeiten</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div id="accountInfo">
+              <div class="accountRow">
                 <div class="row">
-
-                    <div id="accountInfo">
-
-                        
-                            <div class="accountRow">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <h5>Premium Checking <span>XXXX3198</span></h5>
-                                        <hr />
-                                        <h1>15,123.21€</h1>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <ul class="vertical">
-                                            <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                            <div class="accountRow">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <h5>Gemeinsames Sparen <span>XXXX1329</span></h5>
-                                        <hr />
-                                        <h1>59,141.93€</h1>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <ul class="vertical">
-                                            <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                            <div class="accountRow">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <h5>Geldmarkt <span>XXXX6993</span></h5>
-                                        <hr />
-                                        <h1>507,277.36€</h1>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <ul class="vertical">
-                                            <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                            <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                    </div>
-
-
-                    <table id="accounts" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Typ</th>
-                                <th>Kontonummer</th>
-                                <th>Vermögen</th>
-                                <th>&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <td>
-                                    <a href="/account/details/?n=3198">Premium Checking</a>
-                                </td>
-                                <td>XXXX3198</td>
-                                <td>$ 15,123.21</td>
-                                <td>
-                                    <a href="/transfer.html">Transfer</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="/account/details/?n=1329">Gemeinsames Sparen</a>
-                                </td>
-                                <td>XXXX1329</td>
-                                <td>$ 59,141.93</td>
-                                <td>
-                                    <a href="transfer.html">Transfer</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="/account/details/?n=6993">Geldmarkt</a>
-                                </td>
-                                <td>XXXX6993</td>
-                                <td>$ 507,277.36</td>
-                                <td>
-                                    <a href="transfer.html">Transfer</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
-
-            <div id="activitylist" class="row">
-
-                    <h4>Ihre letzten Transaktionen:</h4>
+                  <div class="col-md-8">
+                    <h5>Premium Checking <span>XXXX3198</span></h5>
                     <hr />
-                    <!-- insert lots of memes -->
-                    <div id="recent-box">
-                    <table id="pending" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Datum</th>
-                                <th>Konto</th>
-                                <th>Beschreibung</th>
-                                <th>Typ</th>
-                                <th>Betrag</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>02/11</td>
-                                <td>XXXX3198</td>
-                                <td>PAYPAL INST XFER</td>
-                                <td>Kartenzahlung</td>
-                                <td><span class="badge badge-danger">$ -227.09</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/11</td>
-                                <td>XXXX3198</td>
-                                <td>Direct Deposit</td>
-                                <td>Kredit</td>
-                                <td>
-                                    <span class="badge badge-success">$ 846.33</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/11</td>
-                                <td>XXXX3198</td>
-                                <td>AOL</td>
-                                <td>Barzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -46.17</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/10</td>
-                                <td>XXXX3198</td>
-                                <td>Interest</td>
-                                <td>Kredit</td>
-                                <td>
-                                    <span class="badge badge-success">$ 151.89</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/08</td>
-                                <td>XXXX3198</td>
-                                <td>Spotify</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -172.80</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/07</td>
-                                <td>XXXX3198</td>
-                                <td>State Farm Home & Auto</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -235.35</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/04</td>
-                                <td>XXXX3198</td>
-                                <td>Starbucks US*7KCR6M31L</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -28.65</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/04</td>
-                                <td>XXXX3198</td>
-                                <td>Petsmart US*DT6WSAGONX2I</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -72.34</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/01</td>
-                                <td>XXXX3198</td>
-                                <td>Cash Deposit</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-success">$ 83.54</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>02/01</td>
-                                <td>XXXX3198</td>
-                                <td>Best Buy US*5T8OULXGE</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -55.62</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01/31</td>
-                                <td>XXXX3198</td>
-                                <td>Direct Deposit</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-success">$ 134.88</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01/29</td>
-                                <td>XXXX3198</td>
-                                <td>****5782</td>
-                                <td>Balance Transfer</td>
-                                <td>
-                                    <span class="badge badge-success">$ 8.39</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01/27</td>
-                                <td>XXXX3198</td>
-                                <td>Verizon Wireless</td>
-                                <td>Kartenzahlung</td>
-                                <td>
-                                    <span class="badge badge-danger">$ -145.05</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    <h1>15,123.21€</h1>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="vertical">
+                      <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
+                    </ul>
+                  </div>
                 </div>
-                <a href="#" id="viewall">Weitere Laden</a>
+              </div>    
+              <div class="accountRow">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h5>Gemeinsames Sparen <span>XXXX1329</span></h5>
+                    <hr />
+                    <h1>59,141.93€</h1>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="vertical">
+                      <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>   
+              <div class="accountRow">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h5>Geldmarkt <span>XXXX6993</span></h5>
+                    <hr />
+                    <h1>507,277.36€</h1>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="vertical">
+                      <li><a href="/account/details/?n=3198">Zur Transaktion</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a href="transfer.html">Überweisung tätigen</a><span class="oi" data-glyph="caret-right"></span></li>
+                      <li><a class="moreactions" href="#">Weitere Optionen</a><span class="oi" data-glyph="caret-right"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-
+            <table id="accounts" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Typ</th>
+                  <th>Kontonummer</th>
+                  <th>Vermögen</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="/account/details/?n=3198">Premium Checking</a>
+                  </td>
+                  <td>XXXX3198</td>
+                  <td>$ 15,123.21</td>
+                  <td>
+                    <a href="/transfer.html">Transfer</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="/account/details/?n=1329">Gemeinsames Sparen</a>
+                  </td>
+                  <td>XXXX1329</td>
+                  <td>$ 59,141.93</td>
+                  <td>
+                    <a href="transfer.html">Transfer</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="/account/details/?n=6993">Geldmarkt</a>
+                  </td>
+                  <td>XXXX6993</td>
+                  <td>$ 507,277.36</td>
+                  <td>
+                    <a href="transfer.html">Transfer</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="activitylist" class="row">
+            <h4>Ihre letzten Transaktionen:</h4>
+            <hr>
+            <div id="recent-box">
+              <table id="pending" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Datum</th>
+                    <th>Konto</th>
+                    <th>Beschreibung</th>
+                    <th>Typ</th>
+                    <th>Betrag</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>02/11</td>
+                    <td>XXXX3198</td>
+                    <td>PAYPAL INST XFER</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -227.09</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/11</td>
+                      <td>XXXX3198</td>
+                      <td>Direct Deposit</td>
+                      <td>Kredit</td>
+                      <td>
+                        <span class="badge badge-success">$ 846.33</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/11</td>
+                      <td>XXXX3198</td>
+                      <td>AOL</td>
+                      <td>Barzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -46.17</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/10</td>
+                      <td>XXXX3198</td>
+                      <td>Interest</td>
+                      <td>Kredit</td>
+                      <td>
+                        <span class="badge badge-success">$ 151.89</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/08</td>
+                      <td>XXXX3198</td>
+                      <td>Spotify</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -172.80</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/07</td>
+                      <td>XXXX3198</td>
+                      <td>State Farm Home & Auto</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -235.35</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/04</td>
+                      <td>XXXX3198</td>
+                      <td>Starbucks US*7KCR6M31L</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -28.65</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/04</td>
+                      <td>XXXX3198</td>
+                      <td>Petsmart US*DT6WSAGONX2I</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -72.34</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/01</td>
+                      <td>XXXX3198</td>
+                      <td>Cash Deposit</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-success">$ 83.54</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/01</td>
+                      <td>XXXX3198</td>
+                      <td>Best Buy US*5T8OULXGE</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -55.62</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>01/31</td>
+                      <td>XXXX3198</td>
+                      <td>Direct Deposit</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-success">$ 134.88</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>01/29</td>
+                      <td>XXXX3198</td>
+                      <td>****5782</td>
+                      <td>Balance Transfer</td>
+                      <td>
+                        <span class="badge badge-success">$ 8.39</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>01/27</td>
+                      <td>XXXX3198</td>
+                      <td>Verizon Wireless</td>
+                      <td>Kartenzahlung</td>
+                      <td>
+                        <span class="badge badge-danger">$ -145.05</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <a href="#" id="viewall">Weitere Laden</a>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
         </div>
-
-            
-
-
-            <div class="spacer"></div>
-            <div class="spacer"></div>
-
-            <!-- ads here -->
-
-            <div class="spacer"></div>
-
-
-
-        </div>
-    
+      </div>
     </div>
     <div class="content footer">
-        <div class="container">
-
-
-            <p>Member FDIC: No. Rates and investment products are not insured.
-</p>
-<p>
-The bank information provided on this website is only valid for those living in states that end in G and no others. Any attempt to use this website without authorized access is prohibited by the 11th circuit court of the high magistrates. No offers may be made or accepted from any resident outside of these states due to various state regulations and registration requirements regarding investment products and services.</p>
-
-<p>            &copy; Copyright 2020 GGNOREE LLP, LLC, UDP.
-</p>
-        </div>
-
+      <div class="container">
+        <p>Member FDIC: No. Rates and investment products are not insured.</p>
+        <p>
+          The bank information provided on this website is only valid for those living in 
+          states that end in G and no others. Any attempt to use this website without authorized 
+          access is prohibited by the 11th circuit court of the high magistrates. No offers may 
+          be made or accepted from any resident outside of these states due to various state 
+          regulations and registration requirements regarding investment products and services.
+        </p>
+        <p>            &copy; Copyright 2020 GGNOREE LLP, LLC, UDP.</p>
+      </div>
     </div>
-
     <div id="inactivityPopup">
-        <div class="iseriouslydontcare">
-            <h2>For Your Safety</h2>
-            <p>You have been safely logged out due to inactivity.</p>
-            <p>Please wait a moment and log back in. </p>
-            <p>To return to the login page <a href="/">click here</a>.</p>
-        </div>
+      <div class="iseriouslydontcare">
+        <h2>For Your Safety</h2>
+        <p>You have been safely logged out due to inactivity.</p>
+        <p>Please wait a moment and log back in. </p>
+        <p>To return to the login page <a href="/">click here</a>.</p>
+      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
