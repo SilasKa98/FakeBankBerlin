@@ -461,7 +461,6 @@ margin-top: 1em;
 #recent-box {
 	width: 100%;
     overflow: hidden;
-    height: 200px;
 }
 #send { float: right; }
 #spin-load { display: none; }

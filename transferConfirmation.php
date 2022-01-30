@@ -1,14 +1,13 @@
 <?php
 include 'db_connector.php';
 
-$sql = "select *from ueberweisungen WHERE id = (select max(id) FROM ueberweisungen)";
+$sql = "select * from ueberweisungen WHERE id = (select max(id) FROM ueberweisungen)";
 $stmt = mysqli_stmt_init($connection);
 if(!mysqli_stmt_prepare($stmt, $sql)){
     echo "SQL Statement failed";
 }else{
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-    print "<div id='allMitarbeiter'>";
     while ($row = $result->fetch_assoc()) {
        $name = $row["name"];
        $iban = $row["iban"];
@@ -32,6 +31,21 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
   </head>
 
   <body>
+  	<div class="preheader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<nav>
+							<ul> 
+            		<li style="color:grey">Produkte</li>
+            		<li style="color:grey">Dienstleistungen</li>
+            		<li style="color:grey">Hilfe</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
     <header>    
       <div class="container">
         <div class="row">
@@ -44,6 +58,23 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
         </div>
       </div>
     </header>
+		<div class="menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+  					<nav>
+							<ul class="nav mx-auto">
+								<li class="nav-item"><a class="nav-link" href="/account.php">Ihr Konto</a></li>
+								<li class="nav-item"><a class="nav-link" href="/transfer.html">Bezahlungen und Überweisungen</a></li>
+								<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
+								<li class="nav-item"><a class="nav-link"  id="log" href="/index.html">Logout</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="spacer"></div>
     <h1>Die Überweisung war erfolgreich</h1>
     <img id="greenCheck" src="ownIcons/greenCheck.png"/>
     <div class="rowCstm">
@@ -85,10 +116,6 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
         <div class="cardInfo">
           <img src="ownIcons/careRed.png" id="infoIcon"/>
           <p class="detailText"><b>Achtung</b> - Bitte beachten Sie, dass der Geldeingang beim Begünstigten bis zu 24h in Anspruch nehmen kann!</p>
-        <div class="columnInfo">
-            <div class="cardInfo">
-                <img src="ownIcons/careRed.png" id="infoIcon">
-                <p class="InfoText"><b>Achtung</b> - Bitte beachten Sie, dass der Geldeingang beim Begünstigten bis zu 24h in Anspruch nehmen kann!</p>
         </div>
       </div>
       <br/>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 29. Jan 2022 um 15:06
--- Server-Version: 10.4.20-MariaDB
--- PHP-Version: 8.0.8
+-- Host: 127.0.0.1:3307
+-- Erstellungszeit: 30. Jan 2022 um 16:50
+-- Server-Version: 10.4.13-MariaDB
+-- PHP-Version: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `konten`
+--
+
+CREATE TABLE `konten` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `nummer` varchar(30) NOT NULL,
+  `kontostand` decimal(12,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `konten`
+--
+
+INSERT INTO `konten` (`id`, `name`, `nummer`, `kontostand`) VALUES
+(1, 'Bausparvertrag', '2325433345', '1234.00');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `ueberweisungen`
 --
 
@@ -32,21 +52,27 @@ CREATE TABLE `ueberweisungen` (
   `name` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
   `iban` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
   `betrag` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
-  `zweck` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL
+  `zweck` varchar(255) COLLATE utf8mb4_german2_ci NOT NULL,
+  `datum` datetime NOT NULL,
+  `typ` varchar(30) COLLATE utf8mb4_german2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci;
 
 --
 -- Daten für Tabelle `ueberweisungen`
 --
 
-INSERT INTO `ueberweisungen` (`ID`, `name`, `iban`, `betrag`, `zweck`) VALUES
-(1, 'test', '1212', '1212', 'dadsads'),
-(2, 'adsdas', '132312', '1212', 'saxasdd'),
-(3, 'Silo Tessler', '12313 132313 123111 132313', '2000', 'TEst Überweisung 12334513');
+INSERT INTO `ueberweisungen` (`ID`, `name`, `iban`, `betrag`, `zweck`, `datum`, `typ`) VALUES
+(12, 'Patrick', 'DE18 7420 1874 2018 7420 18', '187,00', 'Lutschen', '2022-01-30 16:25:03', 'Überweisung');
 
 --
 -- Indizes der exportierten Tabellen
 --
+
+--
+-- Indizes für die Tabelle `konten`
+--
+ALTER TABLE `konten`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `ueberweisungen`
@@ -59,10 +85,16 @@ ALTER TABLE `ueberweisungen`
 --
 
 --
+-- AUTO_INCREMENT für Tabelle `konten`
+--
+ALTER TABLE `konten`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT für Tabelle `ueberweisungen`
 --
 ALTER TABLE `ueberweisungen`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
