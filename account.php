@@ -55,7 +55,7 @@ include 'db_connector.php';
     					<ul class="nav mx-auto">
     						<li class="nav-item"><a class="nav-link" href="account.php">Ihr Konto</a></li>
     						<li class="nav-item"><a class="nav-link" href="transfer.php">Bezahlungen und Überweisungen</a></li>
-    						<li class="nav-item"><a class="nav-link" href="#" onclick="triggerInactive()">Kontakt</a></li>
+								<li class="nav-item"><a class="nav-link" href="wip.html">Kontakt</a></li>
     						<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
     					</ul>
     				</nav>
