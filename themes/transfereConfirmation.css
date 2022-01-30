@@ -1,0 +1,134 @@
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.columnCstm {
+  width: 43%;
+  padding: 0 45px;
+  margin: 20px  auto;
+}
+
+
+/* Clear floats after the columns */
+.rowCstm:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .columnCstm {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.cardCstm{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 9px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Float four columns side by side */
+.columnInfo {
+  width: 22%;
+  padding: 0 45px;
+  margin: 20px  auto;
+}
+
+
+/* Clear floats after the columns */
+.rowInfo:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .columnInfo {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.cardInfo{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f1f1f1;
+  background-color: #f5a4a4;
+  border-radius: 4px;
+}
+
+
+/*** */
+
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#greenCheck{
+    width:100px;
+    margin-left: 900px;
+    animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+.detailText{
+    font-size: 11pt;
+}
+
+#betrag{
+    color: #41bf41;
+    font-weight: bold;
+}
+
+#infoIcon{
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 8px;
+    width: 20px;
+}
