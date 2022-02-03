@@ -78,7 +78,7 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
 			<h2>Überweisungsformular</h2> 
 			<p>Bitte füllen Sie alle Felder lückenlos und wahrheitsgemäß aus.</p>
     	<hr>
-			<form action="backend.php" method="POST">
+			<form action="transferSubmit.php" method="POST">
         <p>Konto</p>
         <select type="transfer" name="konto" id="konto">
           <?php

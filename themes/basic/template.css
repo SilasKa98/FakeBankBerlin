@@ -618,7 +618,6 @@ li.nav-item {
 #loginerror {
   font-size: .8em;
   color:red;
-  visibility: collapse;
 }
 
 input[type=transfer] {
