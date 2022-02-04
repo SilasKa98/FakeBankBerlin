@@ -78,22 +78,23 @@ include 'db_connector.php';
             </thead>
             <tbody>
               <?php
-                $sql = "select * from ueberweisungen";
+                $sql = "select * from ueberweisungen where konto in (Select id from konten where benutzer = ?)";
                 $stmt = mysqli_stmt_init($connection);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                    echo "SQL Statement failed";
+                  echo "SQL Statement failed";
                 }else{
-                    mysqli_stmt_execute($stmt);
-                    $result = mysqli_stmt_get_result($stmt);
+                  mysqli_stmt_bind_param($stmt, "s", $_SESSION["idUser"]);
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                  while ($row = $result->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td>".$row["datum"]."</td>";
+                    echo "<td>".$row["iban"]."</td>";
+                    echo "<td>".$row["zweck"]."</td>";
+                    echo "<td>".$row["typ"]."</td>";
+                    echo "<td>".$row["betrag"]." €</td>";
+                    echo "</tr>";
                 }
-                while ($row = $result->fetch_assoc()){
-                  echo "<tr>";
-                  echo "<td>".$row["datum"]."</td>";
-                  echo "<td>".$row["iban"]."</td>";
-                  echo "<td>".$row["zweck"]."</td>";
-                  echo "<td>".$row["typ"]."</td>";
-                  echo "<td>".$row["betrag"]." €</td>";
-                  echo "</tr>";
                 }
               ?>
             </tbody>

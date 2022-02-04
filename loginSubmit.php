@@ -16,10 +16,12 @@ if(!mysqli_stmt_prepare($stmt, $sql)){
   $userID = $result->fetch_assoc()["id"];
   if($userID == NULL){
     # document.getElementById('loginerror').style.visibility = "visible"
-    header("LOCATION: index.php=login");
+    header("LOCATION: index.php?error=login");
   }
   else{
-    header("LOCATION: account.php?user=".$userID);
+    session_start();
+    $_SESSION["idUser"] = $userID;
+    header("LOCATION: account.php");
   }
 }
 ?>

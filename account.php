@@ -56,7 +56,7 @@ include 'db_connector.php';
     						<li class="nav-item"><a class="nav-link" href="account.php">Ihr Konto</a></li>
     						<li class="nav-item"><a class="nav-link" href="transfer.php">Bezahlungen und Überweisungen</a></li>
 								<li class="nav-item"><a class="nav-link" href="wip.html">Kontakt</a></li>
-    						<li class="nav-item"><a class="nav-link"  id="log" href="index.html">Logout</a></li>
+    						<li class="nav-item"><a class="nav-link"  id="log" href="index.php">Logout</a></li>
     					</ul>
     				</nav>
     			</div>
@@ -169,7 +169,7 @@ include 'db_connector.php';
                   if(!mysqli_stmt_prepare($stmt, $sql)){
                     echo "SQL Statement failed";
                   }else{
-                    mysqli_stmt_bind_param($stmt, "s", $_GET["user"]);
+                    mysqli_stmt_bind_param($stmt, "s", $_SESSION["idUser"]);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
                   }
@@ -206,7 +206,7 @@ include 'db_connector.php';
                     if(!mysqli_stmt_prepare($stmt, $sql)){
                       echo "SQL Statement failed";
                     }else{
-                      mysqli_stmt_bind_param($stmt, "s", $_GET["user"]);
+                      mysqli_stmt_bind_param($stmt, "s", $_SESSION["idUser"]);
                       mysqli_stmt_execute($stmt);
                       $result = mysqli_stmt_get_result($stmt);
                     }
