@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Erstellungszeit: 30. Jan 2022 um 20:33
+-- Erstellungszeit: 04. Feb 2022 um 12:24
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.2.32
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `benutzer`
+--
+
+CREATE TABLE `benutzer` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Niemals für ernsthafte Benutzerkonten/Passwörter verwenden!';
+
+--
+-- Daten für Tabelle `benutzer`
+--
+
+INSERT INTO `benutzer` (`id`, `name`, `password`) VALUES
+(1, 'patrick_kröller', 'patkro0205');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `konten`
 --
 
@@ -31,15 +50,16 @@ CREATE TABLE `konten` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `nummer` varchar(30) NOT NULL,
-  `kontostand` decimal(12,2) NOT NULL
+  `kontostand` decimal(12,2) NOT NULL,
+  `benutzer` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `konten`
 --
 
-INSERT INTO `konten` (`id`, `name`, `nummer`, `kontostand`) VALUES
-(1, 'Bausparvertrag', '2325433345', '673.00');
+INSERT INTO `konten` (`id`, `name`, `nummer`, `kontostand`, `benutzer`) VALUES
+(1, 'Bausparvertrag', '2325433345', '1234.00', 1);
 
 -- --------------------------------------------------------
 
@@ -73,6 +93,12 @@ INSERT INTO `ueberweisungen` (`ID`, `name`, `iban`, `betrag`, `zweck`, `datum`, 
 --
 
 --
+-- Indizes für die Tabelle `benutzer`
+--
+ALTER TABLE `benutzer`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indizes für die Tabelle `konten`
 --
 ALTER TABLE `konten`
@@ -89,10 +115,16 @@ ALTER TABLE `ueberweisungen`
 --
 
 --
+-- AUTO_INCREMENT für Tabelle `benutzer`
+--
+ALTER TABLE `benutzer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT für Tabelle `konten`
 --
 ALTER TABLE `konten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `ueberweisungen`
